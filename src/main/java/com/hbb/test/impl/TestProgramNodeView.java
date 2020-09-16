@@ -28,9 +28,9 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		
 	}
 	
-	private JTextField airTextField = new JTextField("0");
-	private JTextField pickTextField = new JTextField("0");
-	private JTextField chchTextField = new JTextField("0");
+	private JLabel airTextField = new JLabel("0");
+	private JLabel pickTextField = new JLabel("0");
+	private JLabel chchTextField = new JLabel("0");
 	
 	private JSlider airSlider = new JSlider();
 	private JSlider pickSlider = new JSlider();
@@ -43,14 +43,17 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		
 		panel.add(createDescrption("AIR"));
 		panel.add(createTextField(airTextField,airSlider, provider));
+		panel.add(createSpacer(10));
 		panel.add(createSlider(airSlider, 0, 5, airTextField, provider));
 		panel.add(createSpacer(20));
 		panel.add(createDescrption("PICK"));
 		panel.add(createTextField(pickTextField, pickSlider,provider));
+		panel.add(createSpacer(10));
 		panel.add(createSlider(pickSlider, 0, 20, pickTextField, provider));
 		panel.add(createSpacer(20));
 		panel.add(createDescrption("CHCH"));
 		panel.add(createTextField(chchTextField, chchSlider,provider));
+		panel.add(createSpacer(10));
 		panel.add(createSlider(chchSlider, 0, 50, chchTextField, provider));
 		
 	}
@@ -78,7 +81,7 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		return box;
 
 }
-	private Box createTextField(final JTextField field, final JSlider slider,
+	private Box createTextField(final JLabel field, final JSlider slider,
 			final ContributionProvider<TestProgramNodeContributon> provider) {
 		Box box = Box.createHorizontalBox();
 		box.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -142,7 +145,7 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		return box;
 	}
 	
-	private Box createSlider(final JSlider slider, int min, int max, final JTextField field,
+	private Box createSlider(final JSlider slider, int min, int max, final JLabel field,
 			final ContributionProvider<TestProgramNodeContributon> provider) {
 		
 		Box box = Box.createHorizontalBox();

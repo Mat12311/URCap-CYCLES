@@ -105,9 +105,9 @@ public class TestProgramNodeContributon implements ProgramNodeContribution {
 
 	@Override
 	public void generateScript(ScriptWriter writer) {
-		writer.appendLine("global air = "+getAir()+"");
-		writer.appendLine("global pick = "+getPICK()+"");
-		writer.appendLine("global chch = "+getCHCH()+"");
+		writer.appendLine("global hbb_air = "+getAir()+"");
+		writer.appendLine("global hbb_pick = "+getPICK()+"");
+		writer.appendLine("global hbb_chch = "+getCHCH()+"");
 	
 	}
 
