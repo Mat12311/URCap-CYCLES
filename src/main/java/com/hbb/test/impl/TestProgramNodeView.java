@@ -2,6 +2,7 @@ package com.hbb.test.impl;
 
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,9 +29,9 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		
 	}
 	
-	private JLabel airTextField = new JLabel("0");
-	private JLabel pickTextField = new JLabel("0");
-	private JLabel chchTextField = new JLabel("0");
+	private JLabel airTextLabel = new JLabel("0");
+	private JLabel pickTextLabel = new JLabel("0");
+	private JLabel chchTextLabel = new JLabel("0");
 	
 	private JSlider airSlider = new JSlider();
 	private JSlider pickSlider = new JSlider();
@@ -42,32 +43,45 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
 		
 		panel.add(createDescrption("AIR"));
-		panel.add(createTextField(airTextField,airSlider, provider));
+		panel.add(createTextField(airTextLabel,airSlider, provider));
 		panel.add(createSpacer(10));
-		panel.add(createSlider(airSlider, 0, 5, airTextField, provider));
+		panel.add(createSlider(airSlider, 0, 5, airTextLabel, provider));
 		panel.add(createSpacer(20));
 		panel.add(createDescrption("PICK"));
-		panel.add(createTextField(pickTextField, pickSlider,provider));
+		panel.add(createTextField(pickTextLabel, pickSlider,provider));
 		panel.add(createSpacer(10));
-		panel.add(createSlider(pickSlider, 0, 20, pickTextField, provider));
+		panel.add(createSlider(pickSlider, 0, 20, pickTextLabel, provider));
 		panel.add(createSpacer(20));
 		panel.add(createDescrption("CHCH"));
-		panel.add(createTextField(chchTextField, chchSlider,provider));
+		panel.add(createTextField(chchTextLabel, chchSlider,provider));
 		panel.add(createSpacer(10));
-		panel.add(createSlider(chchSlider, 0, 50, chchTextField, provider));
+		panel.add(createSlider(chchSlider, 0, 50, chchTextLabel, provider));
 		
 	}
 	
-	public void setAirTextField(int value) {
-		airTextField.setText(String.valueOf(value));
+	public void setAirTextLabel(int value) {
+		airTextLabel.setText(String.valueOf(value));
 		
 	}
-	public void setPickTextField(int value) {
-		pickTextField.setText(String.valueOf(value));
+	public void setPickTextLabel(int value) {
+		pickTextLabel.setText(String.valueOf(value));
 		
 	}
-	public void setChchTextField(int value) {
-		chchTextField.setText(String.valueOf(value));
+	public void setChchTextLabel(int value) {
+		chchTextLabel.setText(String.valueOf(value));
+		
+	}
+	
+	public void setAirSlider(int value) {
+		airSlider.setValue(value);
+		
+	}
+	public void setPickSlider(int value) {
+		pickSlider.setValue(value);
+		
+	}
+	public void setChchSlder(int value) {
+		chchSlider.setValue(value);
 		
 	}
 	
@@ -81,7 +95,7 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		return box;
 
 }
-	private Box createTextField(final JLabel field, final JSlider slider,
+	private Box createTextField(final JLabel label, final JSlider slider,
 			final ContributionProvider<TestProgramNodeContributon> provider) {
 		Box box = Box.createHorizontalBox();
 		box.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -93,23 +107,27 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		minus.setPreferredSize(new Dimension(10,10));
 		minus.setMinimumSize(plus.getPreferredSize());
 		
-		field.setPreferredSize(new Dimension(80,30));
-		field.setMaximumSize(field.getPreferredSize());
+		label.setPreferredSize(new Dimension(40,30));
+		label.setMaximumSize(label.getPreferredSize());
+		//field.setFont(field.getFont().deriveFont(Font.LAYOUT_LEFT_TO_RIGHT));
+		label.setFont(label.getFont().deriveFont(Font.BOLD));
+		
+		
 		
 		plus.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int txt= Integer.parseInt(field.getText());
+				int txt= Integer.parseInt(label.getText());
 				txt++;
-				if(field==airTextField) {
+				if(label==airTextLabel) {
 					provider.get().onAirValueChange(txt);
 					if(txt>5) txt=5;
 				}
-				if(field==pickTextField)provider.get().onPickValueChange(txt);
-				if(field==chchTextField)provider.get().onCHCHValueChange(txt);
+				if(label==pickTextLabel)provider.get().onPickValueChange(txt);
+				if(label==chchTextLabel)provider.get().onCHCHValueChange(txt);
 				slider.setValue(txt);
-				field.setText(String.valueOf(txt));
+				label.setText(String.valueOf(txt));
 				
 				
 				
@@ -121,14 +139,14 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int txt= Integer.parseInt(field.getText());
+				int txt= Integer.parseInt(label.getText());
 				txt--;
 				if(txt<0) txt=0;
 				slider.setValue(txt);
-				if(field==airTextField)provider.get().onAirValueChange(txt);
-				if(field==pickTextField)provider.get().onPickValueChange(txt);
-				if(field==chchTextField)provider.get().onCHCHValueChange(txt);
-				field.setText(String.valueOf(txt));
+				if(label==airTextLabel)provider.get().onAirValueChange(txt);
+				if(label==pickTextLabel)provider.get().onPickValueChange(txt);
+				if(label==chchTextLabel)provider.get().onCHCHValueChange(txt);
+				label.setText(String.valueOf(txt));
 				
 				
 				
@@ -138,14 +156,14 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		
 		
 		box.add(minus);
-		box.add(field);
+		box.add(label);
 		box.add(plus);
 		
 		
 		return box;
 	}
 	
-	private Box createSlider(final JSlider slider, int min, int max, final JLabel field,
+	private Box createSlider(final JSlider slider, int min, int max, final JLabel label,
 			final ContributionProvider<TestProgramNodeContributon> provider) {
 		
 		Box box = Box.createHorizontalBox();
@@ -163,10 +181,10 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				int newValue = slider.getValue();
-				if(field==airTextField)provider.get().onAirValueChange(newValue);
-				if(field==pickTextField)provider.get().onPickValueChange(newValue);
-				if(field==chchTextField)provider.get().onCHCHValueChange(newValue);
-				field.setText(String.valueOf(newValue));
+				if(label==airTextLabel)provider.get().onAirValueChange(newValue);
+				if(label==pickTextLabel)provider.get().onPickValueChange(newValue);
+				if(label==chchTextLabel)provider.get().onCHCHValueChange(newValue);
+				label.setText(String.valueOf(newValue));
 				
 				
 			}

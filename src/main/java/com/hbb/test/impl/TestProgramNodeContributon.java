@@ -79,9 +79,12 @@ public class TestProgramNodeContributon implements ProgramNodeContribution {
 
 	@Override
 	public void openView() {
-		view.setAirTextField(getAir());
-		view.setPickTextField(getPICK());
-		view.setChchTextField(getCHCH());
+		view.setAirTextLabel(getAir());
+		view.setPickTextLabel(getPICK());
+		view.setChchTextLabel(getCHCH());
+		view.setAirSlider(getAir());
+		view.setPickSlider(getPICK());
+		view.setChchSlder(getCHCH());
 		
 		
 	}
