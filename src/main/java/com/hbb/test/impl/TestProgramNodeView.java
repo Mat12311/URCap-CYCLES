@@ -43,18 +43,21 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
 		
 		panel.add(createDescrption("AIR"));
-		panel.add(createTextField(airTextLabel,airSlider, provider));
-		panel.add(createSpacer(10));
+		//panel.add(createSpacer(5));
+		panel.add(createTextLabelButton(airTextLabel,airSlider, provider));
+		panel.add(createSpacer(5));
 		panel.add(createSlider(airSlider, 0, 5, airTextLabel, provider));
-		panel.add(createSpacer(20));
+		panel.add(createSpacer(5));
 		panel.add(createDescrption("PICK"));
-		panel.add(createTextField(pickTextLabel, pickSlider,provider));
-		panel.add(createSpacer(10));
+		//panel.add(createSpacer(5));
+		panel.add(createTextLabelButton(pickTextLabel, pickSlider,provider));
+		panel.add(createSpacer(5));
 		panel.add(createSlider(pickSlider, 0, 20, pickTextLabel, provider));
-		panel.add(createSpacer(20));
+		panel.add(createSpacer(5));
 		panel.add(createDescrption("CHCH"));
-		panel.add(createTextField(chchTextLabel, chchSlider,provider));
-		panel.add(createSpacer(10));
+		//panel.add(createSpacer(5));
+		panel.add(createTextLabelButton(chchTextLabel, chchSlider,provider));
+		panel.add(createSpacer(5));
 		panel.add(createSlider(chchSlider, 0, 50, chchTextLabel, provider));
 		
 	}
@@ -91,12 +94,14 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		box.setAlignmentX(Component.LEFT_ALIGNMENT);
 		
 		JLabel label = new JLabel(desc);
+		label.setPreferredSize(new Dimension(60,30));
+		label.setMaximumSize(label.getPreferredSize());
 		label.setFont(label.getFont().deriveFont(Font.BOLD));
 		box.add(label);
 		return box;
 
 }
-	private Box createTextField(final JLabel label, final JSlider slider,
+	private Box createTextLabelButton(final JLabel label, final JSlider slider,
 			final ContributionProvider<TestProgramNodeContributon> provider) {
 		Box box = Box.createHorizontalBox();
 		box.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -108,7 +113,7 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		minus.setPreferredSize(new Dimension(10,10));
 		minus.setMinimumSize(plus.getPreferredSize());
 		
-		label.setPreferredSize(new Dimension(40,30));
+		label.setPreferredSize(new Dimension(30,40));
 		label.setMaximumSize(label.getPreferredSize());
 		label.setFont(label.getFont().deriveFont(Font.BOLD));
 		//field.setFont(field.getFont().deriveFont(Font.LAYOUT_LEFT_TO_RIGHT));
@@ -175,7 +180,7 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		slider.setValue(0);
 		slider.setOrientation(JSlider.HORIZONTAL);
 		
-		slider.setPreferredSize(new Dimension(500,20));
+		slider.setPreferredSize(new Dimension(500,30));
 		slider.setMaximumSize(slider.getPreferredSize());
 		
 		slider.addChangeListener(new ChangeListener() {
