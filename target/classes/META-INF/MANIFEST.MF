@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1600243244414
+Bnd-LastModified: 1600332346218
 Build-Jdk: 1.8.0_265
 Built-By: ur
 Bundle-Activator: com.hbb.test.impl.Activator

@@ -91,6 +91,7 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		box.setAlignmentX(Component.LEFT_ALIGNMENT);
 		
 		JLabel label = new JLabel(desc);
+		label.setFont(label.getFont().deriveFont(Font.BOLD));
 		box.add(label);
 		return box;
 
@@ -109,6 +110,7 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		
 		label.setPreferredSize(new Dimension(40,30));
 		label.setMaximumSize(label.getPreferredSize());
+		label.setFont(label.getFont().deriveFont(Font.BOLD));
 		//field.setFont(field.getFont().deriveFont(Font.LAYOUT_LEFT_TO_RIGHT));
 		label.setFont(label.getFont().deriveFont(Font.BOLD));
 		
