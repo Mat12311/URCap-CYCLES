@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.hbb.test.impl.AppTest" time="0.154" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.hbb.test.impl.AppTest" time="0.137" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -17,7 +17,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /home/ur/workspace/com.hbb.test/target/surefire 2020-09-17T05-09-17_406-jvmRun1 surefire8650807942064795160tmp surefire_05298230251426380149tmp"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /home/ur/workspace/com.hbb.test/target/surefire 2020-09-29T03-15-21_749-jvmRun1 surefire4427610654206604955tmp surefire_02050245809270876899tmp"/>
     <property name="surefire.test.class.path" value="/home/ur/workspace/com.hbb.test/target/test-classes:/home/ur/workspace/com.hbb.test/target/classes:/home/ur/.m2/repository/org/osgi/org.osgi.core/4.3.0/org.osgi.core-4.3.0.jar:/home/ur/.m2/repository/com/ur/urcap/api/1.11.0/api-1.11.0.jar:/home/ur/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/ur/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/ur"/>
@@ -35,7 +35,7 @@
     <property name="java.runtime.version" value="1.8.0_265-8u265-b01-0ubuntu2~16.04-b01"/>
     <property name="user.name" value="ur"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="4.15.0-112-generic"/>
+    <property name="os.version" value="4.15.0-117-generic"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
@@ -57,5 +57,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testApp" classname="com.hbb.test.impl.AppTest" time="0.004"/>
+  <testcase name="testApp" classname="com.hbb.test.impl.AppTest" time="0.005"/>
 </testsuite>

@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
-import javax.swing.JTextField;
+//import javax.swing.JTextField;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -113,11 +113,15 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		minus.setPreferredSize(new Dimension(10,10));
 		minus.setMinimumSize(plus.getPreferredSize());
 		
+		JLabel lab1 = new JLabel("   ");
+		
 		label.setPreferredSize(new Dimension(30,40));
 		label.setMaximumSize(label.getPreferredSize());
+		
 		label.setFont(label.getFont().deriveFont(Font.BOLD));
+		
 		//field.setFont(field.getFont().deriveFont(Font.LAYOUT_LEFT_TO_RIGHT));
-		label.setFont(label.getFont().deriveFont(Font.BOLD));
+		//label.setFont(label.getFont().deriveFont(Font.BOLD));
 		
 		
 		
@@ -163,6 +167,7 @@ public class TestProgramNodeView implements SwingProgramNodeView <TestProgramNod
 		
 		
 		box.add(minus);
+		box.add(lab1);
 		box.add(label);
 		box.add(plus);
 		
